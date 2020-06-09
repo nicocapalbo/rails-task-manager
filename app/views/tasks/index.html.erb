@@ -1,0 +1,12 @@
+<h1>My tasks</h1>
+
+<!-- Default checked -->
+<% @tasks.each do |task|%>
+  <div class="custom-control custom-checkbox">
+    <%= check_box_tag 'tasks', 'ok', task.completed %>
+    <%= link_to task.title, task_path(task) %>
+  </div>
+<% end %>
+<br>
+<%= link_to 'Create task', new_path %>
+
